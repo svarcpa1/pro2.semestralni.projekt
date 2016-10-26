@@ -1,9 +1,12 @@
 package cz.uhk.fim.pro2.game;
 
+import cz.uhk.fim.game.gui.MainFrame;
+
 public class Game {
 
 	public static void main(String[] args) {
-		System.out.println("ahoj svete");
+
+		MainFrame mainFrame = new MainFrame();
 
 	}
 
