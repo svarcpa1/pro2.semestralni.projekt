@@ -4,6 +4,7 @@ import cz.uhk.fim.game.gui.HomeScreen;
 import cz.uhk.fim.game.gui.MainFrame;
 import cz.uhk.fim.game.gui.ScoreScreen;
 
+
 public class Game {
 
 	public static void main(String[] args) {
@@ -12,8 +13,7 @@ public class Game {
 		
 		HomeScreen homeScreen= new HomeScreen(mainFrame);
 		mainFrame.setScreen(new HomeScreen(mainFrame));
-		
-
+				
 	}
 
 }

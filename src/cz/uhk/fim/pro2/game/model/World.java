@@ -26,6 +26,14 @@ public class World {
 		tubes.add(tube);
 	}
 	
+	public Bird getBird() {
+		return bird;
+	}
 	
-	
+	@Override
+	public String toString(){
+		return (bird.getName()+ " Bird na pozici "+ bird.getPositionX() 
+				+ bird.getPositionY()+"Trubky" + tubes.size() +
+				"Hearts" + hearts.size());	
+	}
 }

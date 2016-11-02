@@ -7,7 +7,7 @@ public class Bird {
 	private float speed;
 	private int lives;
 
-	public Bird(String name, float positonX, float positionY, float speed, int lives) {
+	public Bird(String name, float positonX, float positionY) {
 		super();
 		this.name=name;
 		this.positionX=positonX;
