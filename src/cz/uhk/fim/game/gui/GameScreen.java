@@ -1,5 +1,6 @@
 package cz.uhk.fim.game.gui;
 
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -19,6 +20,11 @@ public class GameScreen extends Screen {
 				mainFrame.setScreen(new HomeScreen(mainFrame));
 			}
 		});
+		
+		jButtonBack.setBounds(20, 20, 60, 60);
+		jButtonBack.setFont(new Font("Arial",Font.PLAIN, 8));
+		jButtonPause.setBounds(400, 20, 60, 60);
+		jButtonPause.setFont(new Font("Arial",Font.PLAIN, 8));
 		
 		add(jButtonPause);
 		add(jButtonBack);
