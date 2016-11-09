@@ -5,7 +5,9 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 import javax.swing.JButton;
+import javax.swing.Timer;
 
 import cz.uhk.fim.pro2.game.model.Bird;
 import cz.uhk.fim.pro2.game.model.Heart;
@@ -13,6 +15,8 @@ import cz.uhk.fim.pro2.game.model.Tube;
 import cz.uhk.fim.pro2.game.model.World;
 
 public class GameScreen extends Screen {
+	
+	private long lastTimeMillis;
 
 	public GameScreen(MainFrame mainFrame) {
 		super(mainFrame);
@@ -51,6 +55,23 @@ public class GameScreen extends Screen {
 		gamecanvas.setBounds(0, 0, MainFrame.WIDTH, MainFrame.HEIGHT);
 		System.out.println(world);
 		
+		Timer timer = new Timer(20, new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				long currentTimeMillis = System.currentTimeMillis();
+				
+				float delta = (currentTimeMillis - lastTimeMillis) / 1000f;				
+				System.out.println(delta);
+				world.update(delta);
+				gamecanvas.repaint();
+				
+				lastTimeMillis = currentTimeMillis;
+			}
+		});
+		
+		lastTimeMillis = System.currentTimeMillis();
+		timer.start();
 	}
-
 }
+

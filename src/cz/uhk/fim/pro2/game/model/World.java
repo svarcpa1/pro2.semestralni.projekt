@@ -10,6 +10,8 @@ public class World {
 	private List<Tube> tubes;
 	private List<Heart> hearts;
 	
+	static final int SPEED = 100;
+	
 	//konstruktor
 	public World(Bird bird) {
 		this.bird = bird;
@@ -18,6 +20,11 @@ public class World {
 	}
 	
 	//metody
+	public void update(float deltaTime){
+		bird.update(deltaTime);
+	}
+	
+	
 	public void addHeart(Heart heart){
 		hearts.add(heart);
 	}
