@@ -49,7 +49,7 @@ public class GameScreen extends Screen {
 		GameCanvas gamecanvas = new GameCanvas(world);
 		add(gamecanvas);
 		gamecanvas.setBounds(0, 0, MainFrame.WIDTH, MainFrame.HEIGHT);
-
+		System.out.println(world);
 		
 	}
 

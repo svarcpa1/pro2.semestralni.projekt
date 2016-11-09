@@ -3,11 +3,15 @@ package cz.uhk.fim.pro2.game.model;
 import java.awt.Color;
 import java.awt.Graphics;
 
+import cz.uhk.fim.game.gui.MainFrame;
+
 public class Tube {
 
 	private float positionX;
 	private float height;
 	private Color color;
+	
+	private static final int GAP = 200;
 	
 	public Tube(float positionX, float height, Color color) {
 		super();
@@ -18,7 +22,20 @@ public class Tube {
 
 	public void paint(Graphics g){
 		g.setColor(Color.GREEN);
-		g.fillRect((int)getPositionX()-25,50, 50, 50);
+		
+		g.fillRect(
+				(int)(getPositionX())-25, 
+				(int) height, 
+				50, 
+				(int) (MainFrame.HEIGHT- height)
+		);
+		
+		g.fillRect(
+				(int)(getPositionX())-25,
+				0,
+				50,
+				(int) (height - GAP)
+		);
 	}
 	
 	public float getPositionX() {

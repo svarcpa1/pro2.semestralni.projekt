@@ -41,8 +41,8 @@ public class World {
 
 	@Override
 	public String toString(){
-		return (bird.getName()+ " Bird na pozici "+ bird.getPositionX() 
-				+ bird.getPositionY()+"Trubky" + tubes.size() +
-				"Hearts" + hearts.size());	
+		return (bird.getName()+ " Bird na pozici " + bird.getPositionX() +" "+
+				+ bird.getPositionY()+" Trubky " + tubes.size() +
+				" Hearts " + hearts.size());	
 	}
 }
