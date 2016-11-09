@@ -30,6 +30,15 @@ public class World {
 		return bird;
 	}
 	
+	
+	public List<Tube> getTubes() {
+		return tubes;
+	}
+
+	public List<Heart> getHearts() {
+		return hearts;
+	}
+
 	@Override
 	public String toString(){
 		return (bird.getName()+ " Bird na pozici "+ bird.getPositionX() 
