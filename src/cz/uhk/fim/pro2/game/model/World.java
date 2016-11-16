@@ -19,7 +19,8 @@ public class World {
 		hearts = new ArrayList<>();
 	}
 	
-	//metody
+	//metody:
+	
 	//metoda update - stará se o pohyb, voláme metudu update u ptáka, trubky, srdce
 	//for each protože pro každý objekt ji zavoláme
 	public void update(float deltaTime){

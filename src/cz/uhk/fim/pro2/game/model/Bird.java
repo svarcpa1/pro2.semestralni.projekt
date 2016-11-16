@@ -5,6 +5,8 @@ import java.awt.Graphics;
 
 public class Bird {
 
+	private static final int GRAVITY = 300;
+	
 	private String name;
 	private float positionX, positionY;
 	private float speed;
@@ -28,6 +30,7 @@ public class Bird {
 	//metoda rozpohybovájící ftáka
 	public void update(float deltaTime){
 		//positionX += World.SPEED * deltaTime;
+		positionY +=  GRAVITY*deltaTime;
 	}
 	
 	
