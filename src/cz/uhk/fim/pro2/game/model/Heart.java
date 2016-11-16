@@ -35,6 +35,11 @@ public class Heart {
 		this.positionY = positionY;
 	}
 	
+	//sam - rozpohybuje 
+	public void update(float deltaTime){
+		positionX -= World.SPEED * deltaTime;
+	}
+	
 	
 	
 }

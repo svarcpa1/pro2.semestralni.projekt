@@ -20,8 +20,19 @@ public class World {
 	}
 	
 	//metody
+	//metoda update - stará se o pohyb, voláme metudu update u ptáka, trubky, srdce
+	//for each protože pro každý objekt ji zavoláme
 	public void update(float deltaTime){
 		bird.update(deltaTime);
+		
+		for(Heart hearts: hearts){
+			hearts.update(deltaTime);
+		}
+		
+		for(Tube tubes: tubes){
+			tubes.update(deltaTime);
+		}
+		
 	}
 	
 	

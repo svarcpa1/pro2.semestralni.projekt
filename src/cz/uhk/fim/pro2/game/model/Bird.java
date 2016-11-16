@@ -24,8 +24,10 @@ public class Bird {
 		g.fillRect((int)(getPositionX()-25), (int)getPositionY()-25, 50, 50);
 	}
 	
+	
+	//metoda rozpohybovájící ftáka
 	public void update(float deltaTime){
-		positionX += World.SPEED * deltaTime;
+		//positionX += World.SPEED * deltaTime;
 	}
 	
 	

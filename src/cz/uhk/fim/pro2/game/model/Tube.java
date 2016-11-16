@@ -54,6 +54,10 @@ public class Tube {
 		return color;
 	}
 	
+	//sam - rozpohybuje
+	public void update(float deltaTime){
+		positionX -= World.SPEED * deltaTime;
+	}
 	
 	
 
