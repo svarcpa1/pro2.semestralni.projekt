@@ -4,7 +4,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 import javax.swing.Timer;
@@ -65,8 +66,18 @@ public class GameScreen extends Screen {
 		world.addHeart(new Heart(700, 600));
 		
 		GameCanvas gamecanvas = new GameCanvas(world);
-		add(gamecanvas);
 		gamecanvas.setBounds(0, 0, MainFrame.WIDTH, MainFrame.HEIGHT);
+		
+		gamecanvas.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				super.mousePressed(e);
+				bird.goUp();
+			}
+		});
+		
+		add(gamecanvas);
+
 
 		timer = new Timer(20, new ActionListener() {
 			

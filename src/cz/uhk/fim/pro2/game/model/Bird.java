@@ -5,10 +5,12 @@ import java.awt.Graphics;
 
 public class Bird {
 
-	private static final int GRAVITY = 300;
+	private static final int GRAVITY = 400;
+	private static final int JUMP = 650;
 	
 	private String name;
 	private float positionX, positionY;
+	//tato promená øíká jak rychle bude stoupat
 	private float speed;
 	private int lives;
 
@@ -29,10 +31,16 @@ public class Bird {
 	
 	//metoda rozpohybovájící ftáka
 	public void update(float deltaTime){
+		positionY -= speed *deltaTime;
 		//positionX += World.SPEED * deltaTime;
 		positionY +=  GRAVITY*deltaTime;
+		//øeší skok
+		speed -= speed * deltaTime;
 	}
 	
+	public void goUp(){
+		speed = JUMP;
+	}
 	
 	public String getName(){
 		return name;
@@ -70,10 +78,7 @@ public class Bird {
 		this.lives = lives;
 	}
 
-	public void goUp(){
-		
-	}
-	
+
 	public void catchHeart(){
 			
 	}
