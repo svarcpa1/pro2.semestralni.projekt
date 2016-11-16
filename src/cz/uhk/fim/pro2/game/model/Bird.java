@@ -54,6 +54,24 @@ public class Bird {
 		speed -= speed * deltaTime;
 	}
 	
+	//kolize s trubou
+	public Boolean collideWith(Tube tube){
+		Rectangle rectangle = getRectangle();
+		//intersect za nás poèítá, jestli se nám ty ètverce nepøekrývají!
+		return rectangle.intersects(tube.getBottomRectangle()) || rectangle.intersects(tube.getTopRectangle());
+	}
+	
+	//kolize se srdce
+	public Boolean collideWith(Heart heart){
+		return getRectangle().intersects(heart.getRectangle());
+	}
+	
+	//kolize se zemí
+	public Boolean isOutOf() {
+				
+	}
+	
+	
 	public void goUp(){
 		speed = JUMP;
 	}
