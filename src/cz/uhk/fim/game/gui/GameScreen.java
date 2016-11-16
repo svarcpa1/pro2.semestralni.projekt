@@ -14,8 +14,9 @@ import cz.uhk.fim.pro2.game.model.Bird;
 import cz.uhk.fim.pro2.game.model.Heart;
 import cz.uhk.fim.pro2.game.model.Tube;
 import cz.uhk.fim.pro2.game.model.World;
+import interfaces.WorldListener;
 
-public class GameScreen extends Screen {
+public class GameScreen extends Screen  implements WorldListener{
 	
 	private long lastTimeMillis;
 	private Timer timer;
@@ -57,7 +58,7 @@ public class GameScreen extends Screen {
 		//WORLD	
 		Bird bird = new Bird("Pavel", 150, 400);
 		
-		World world = new World(bird);
+		World world = new World(bird, this);
 		world.addTubet(new Tube(400, 400, Color.green));
 		world.addTubet(new Tube(600, 300, Color.green));
 		world.addTubet(new Tube(800, 500, Color.green));
@@ -95,6 +96,24 @@ public class GameScreen extends Screen {
 		
 		lastTimeMillis = System.currentTimeMillis();
 		timer.start();
+	}
+
+	@Override
+	public void crashTube(Tube tube) {
+		System.out.println("naboural do tuby");
+		
+	}
+
+	@Override
+	public void catchHeart(Heart heart) {
+		System.out.println("sebral srdce");
+		
+	}
+
+	@Override
+	public void outOf() {
+		System.out.println("je mimo");
+		
 	}
 }
 
