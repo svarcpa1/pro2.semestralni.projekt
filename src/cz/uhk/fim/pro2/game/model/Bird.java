@@ -2,6 +2,8 @@ package cz.uhk.fim.pro2.game.model;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
+
 
 public class Bird {
 
@@ -25,9 +27,23 @@ public class Bird {
 	
 	public void paint(Graphics g){
 		g.setColor(Color.BLUE);		
-		g.fillRect((int)(getPositionX()-25), (int)getPositionY()-25, 50, 50);
+		Rectangle rectangle = getRectangle();
+		
+		g.fillRect(
+				(int)rectangle.getX(),
+				(int)rectangle.getY(),
+				(int)rectangle.getWidth(),
+				(int)rectangle.getHeight());
 	}
 	
+	//vraáti souøadnice ke kolizím	
+	public Rectangle getRectangle() {
+		return new Rectangle(
+				(int)(getPositionX()-25),
+				(int)getPositionY()-25,
+				50,
+				50);
+	}
 	
 	//metoda rozpohybovájící ftáka
 	public void update(float deltaTime){

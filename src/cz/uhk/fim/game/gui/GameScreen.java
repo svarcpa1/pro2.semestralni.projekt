@@ -55,7 +55,7 @@ public class GameScreen extends Screen {
 		add(jButtonBack);
 		
 		//WORLD	
-		Bird bird = new Bird("Pavel", 240, 400);
+		Bird bird = new Bird("Pavel", 150, 400);
 		
 		World world = new World(bird);
 		world.addTubet(new Tube(400, 400, Color.green));
