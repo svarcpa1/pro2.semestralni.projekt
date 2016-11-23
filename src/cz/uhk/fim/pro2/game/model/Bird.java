@@ -9,6 +9,8 @@ import cz.uhk.fim.game.gui.MainFrame;
 
 public class Bird {
 
+	public static final int DEFAULT_SCORE =0;
+	public static final int DEFAULT_LIFES =3;
 	private static final int GRAVITY = 400;
 	private static final int JUMP = 650;
 	
@@ -16,7 +18,8 @@ public class Bird {
 	private float positionX, positionY;
 	//tato promená øíká jak rychle bude stoupat
 	private float speed;
-	private int lives;
+	private int lifes;
+	private int score;
 
 	public Bird(String name, float positonX, float positionY) {
 		super();
@@ -24,7 +27,8 @@ public class Bird {
 		this.positionX=positonX;
 		this.positionY=positionY;		
 		speed = 0;
-		lives = 3;
+		lifes = DEFAULT_LIFES;
+		score = DEFAULT_SCORE; 
 	}
 	
 	public void paint(Graphics g){
@@ -86,6 +90,35 @@ public class Bird {
 			
 	}
 	
+	public void addPoint(){
+		score++;
+	}
+	
+	
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+	public void catchHeart(){
+		lifes++;
+	}
+	
+	public void die(){
+		
+	}
+	
+	public void addLive(){
+		
+	}
+	
+	public void removeLive(){
+		lifes--;
+	}
+	
 	
 	public void goUp(){
 		speed = JUMP;
@@ -119,28 +152,12 @@ public class Bird {
 		this.speed = speed;
 	}
 
-	public int getLives() {
-		return lives;
+	public int getLifes() {
+		return lifes;
 	}
 
-	public void setLives(int lives) {
-		this.lives = lives;
+	public void setLifes(int lifes) {
+		this.lifes = lifes;
 	}
 
-
-	public void catchHeart(){
-			
-	}
-	
-	public void die(){
-		
-	}
-	
-	public void addLive(){
-		
-	}
-	
-	public void removeLive(){
-		
-	}
 }
