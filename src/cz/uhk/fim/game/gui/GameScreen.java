@@ -103,7 +103,9 @@ public class GameScreen extends Screen  implements WorldListener{
 
 	@Override
 	public void crashTube(Tube tube) {
-		System.out.println("naboural do tuby");
+		bird.removeLive();
+		bird.setPositionY(tube.getCenterY());
+		System.out.println("poèet životù: " + bird.getLifes());
 		
 	}
 

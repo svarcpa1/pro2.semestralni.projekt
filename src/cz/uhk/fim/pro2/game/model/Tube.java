@@ -55,6 +55,11 @@ public class Tube {
 				(int) (height - GAP));	
 	}
 	
+	public int getCenterY(){
+		
+		return (int) (height - (GAP/2.0));
+	}
+	
 	public float getPositionX() {
 		return positionX;
 	}
