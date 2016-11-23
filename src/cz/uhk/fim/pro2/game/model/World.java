@@ -45,6 +45,14 @@ public class World {
 			tube.update(deltaTime);			
 			if(bird.collideWith(tube)){
 				worldListener.crashTube(tube);
+			} else{
+				
+				if(bird.getPositionX()> tube.getMinX() && 
+				   bird.getPositionX()< tube.getMaxX()
+				   ){
+						
+						
+					}
 			}
 		}		
 	}

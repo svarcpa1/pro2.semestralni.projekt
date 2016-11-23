@@ -11,6 +11,7 @@ public class Tube {
 	private float positionX;
 	private float height;
 	private Color color;
+	private  static final int WIDTH =50; 
 	
 	private static final int GAP = 200;
 	
@@ -41,17 +42,17 @@ public class Tube {
 	
 	public Rectangle getTopRectangle(){
 		return new Rectangle(
-				(int)(getPositionX())-25, 
+				(int)(getPositionX())-(WIDTH/2), 
 				(int) height, 
-				50, 
+				WIDTH, 
 				(int)(MainFrame.HEIGHT- height)
 				);	
 	}
 	public Rectangle getBottomRectangle(){
 		return new Rectangle(
-				(int)(getPositionX())-25,
+				(int)(getPositionX())-(WIDTH/2),
 				0,
-				50,
+				WIDTH,
 				(int) (height - GAP));	
 	}
 	
@@ -63,7 +64,15 @@ public class Tube {
 	public float getPositionX() {
 		return positionX;
 	}
-
+	
+	public int getMinX(){
+		return (int) positionX -(WIDTH/2);
+	}
+	public int getMaxX(){
+		return (int) positionX +(WIDTH/2);
+	}
+	
+	
 	public void setPositionX(float positionX) {
 		this.positionX = positionX;
 	}
