@@ -8,6 +8,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.Timer;
 
 import cz.uhk.fim.pro2.game.model.Bird;
@@ -20,8 +21,8 @@ public class GameScreen extends Screen  implements WorldListener{
 	
 	private long lastTimeMillis;
 	private Timer timer;
-	
 	private Bird bird;
+	private JLabel jLabelScore, jLabelLifes;
 
 	public GameScreen(MainFrame mainFrame) {
 		super(mainFrame);
@@ -58,6 +59,15 @@ public class GameScreen extends Screen  implements WorldListener{
 		add(jButtonPause);
 		add(jButtonBack);
 		
+		jLabelScore = new JLabel("Score: " + Bird.DEFAULT_SCORE);
+		jLabelLifes = new JLabel("Životy: " + Bird.DEFAULT_LIFES);
+		
+		jLabelLifes.setBounds(260, 20, 120, 60);
+		jLabelScore.setBounds(100, 20, 120, 60);
+		
+		add(jLabelLifes);
+		add(jLabelScore);
+		
 		//WORLD	
 		bird = new Bird("Pavel", 150, 400);
 		
@@ -91,6 +101,16 @@ public class GameScreen extends Screen  implements WorldListener{
 				
 				float delta = (currentTimeMillis - lastTimeMillis) / 1000f;				
 				world.update(delta);
+				
+				jLabelLifes.setText("Životy: " +bird.getLifes());
+				jLabelScore.setText("Score: "+ bird.getScore());
+				
+				if(!bird.isAlive()){
+					timer.stop();
+				}
+				
+				
+				
 				gamecanvas.repaint();
 				
 				lastTimeMillis = currentTimeMillis;
@@ -105,21 +125,23 @@ public class GameScreen extends Screen  implements WorldListener{
 	public void crashTube(Tube tube) {
 		bird.removeLive();
 		bird.setPositionY(tube.getCenterY());
-		System.out.println("poèet životù: " + bird.getLifes());
 		
 	}
 
 	@Override
 	public void catchHeart(Heart heart) {
-		bird.catchHeart();
-		System.out.println("zivoty: "+ bird.getLifes());
 		heart.setPositionY(-100);
+		bird.catchHeart();
+
 		
 	}
 
 	@Override
 	public void outOf() {
-		System.out.println("je mimo");
+		bird.setPositionY(MainFrame.HEIGHT/2);
+		bird.setSpeed(Bird.JUMP/2);
+		
+		bird.removeLive();
 		
 	}
 }

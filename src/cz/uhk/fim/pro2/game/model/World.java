@@ -26,7 +26,7 @@ public class World {
 	//metody:
 	
 	//metoda update - stará se o pohyb, voláme metudu update u ptáka, trubky, srdce
-	//for each protože pro každý objekt ji zavoláme
+	//for each protože pro každý objekt ji zavoláme	
 	public void update(float deltaTime){
 		bird.update(deltaTime);
 		
@@ -44,12 +44,16 @@ public class World {
 		for(Tube tube: tubes){
 			tube.update(deltaTime);			
 			if(bird.collideWith(tube)){
+				tube.setCounted(true);
 				worldListener.crashTube(tube);
 			} else{
 				
 				if(bird.getPositionX()> tube.getMinX() && 
 				   bird.getPositionX()< tube.getMaxX()
-				   ){
+				   ){if(!tube.isCounted()){
+					   bird.addPoint();
+					   tube.setCounted(true);
+				   }
 						
 						
 					}

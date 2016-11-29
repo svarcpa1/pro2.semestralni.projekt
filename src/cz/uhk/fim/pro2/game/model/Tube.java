@@ -11,6 +11,7 @@ public class Tube {
 	private float positionX;
 	private float height;
 	private Color color;
+	private boolean counted = false;
 	private  static final int WIDTH =50; 
 	
 	private static final int GAP = 200;
@@ -72,7 +73,14 @@ public class Tube {
 		return (int) positionX +(WIDTH/2);
 	}
 	
-	
+	public boolean isCounted() {
+		return counted;
+	}
+
+	public void setCounted(boolean counted) {
+		this.counted = counted;
+	}
+
 	public void setPositionX(float positionX) {
 		this.positionX = positionX;
 	}
