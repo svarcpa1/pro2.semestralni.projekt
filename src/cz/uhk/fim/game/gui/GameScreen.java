@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.Timer;
 
 import cz.uhk.fim.pro2.game.model.Bird;
+import cz.uhk.fim.pro2.game.model.Ground;
 import cz.uhk.fim.pro2.game.model.Heart;
 import cz.uhk.fim.pro2.game.model.Tube;
 import cz.uhk.fim.pro2.game.model.World;
@@ -23,6 +24,7 @@ public class GameScreen extends Screen  implements WorldListener{
 	private Timer timer;
 	private Bird bird;
 	private JLabel jLabelScore, jLabelLifes;
+
 
 	public GameScreen(MainFrame mainFrame) {
 		super(mainFrame);
@@ -67,18 +69,27 @@ public class GameScreen extends Screen  implements WorldListener{
 		
 		add(jLabelLifes);
 		add(jLabelScore);
+
 		
 		//WORLD	
 		bird = new Bird("Pavel", 150, 400);
 		
+		
+
+		
 		World world = new World(bird, this);
+		world.generateRandom();
+
+		
+		/*
 		world.addTubet(new Tube(400, 400, Color.green));
 		world.addTubet(new Tube(600, 300, Color.green));
 		world.addTubet(new Tube(800, 500, Color.green));
-		
+		*/
+		/*
 		world.addHeart(new Heart(500, 450));
 		world.addHeart(new Heart(700, 600));
-		
+		*/
 		GameCanvas gamecanvas = new GameCanvas(world);
 		gamecanvas.setBounds(0, 0, MainFrame.WIDTH, MainFrame.HEIGHT);
 		
