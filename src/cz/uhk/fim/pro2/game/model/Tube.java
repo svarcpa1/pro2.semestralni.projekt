@@ -60,7 +60,7 @@ public class Tube {
 	
 	public static float getRandomHeight(){
 		//varci èislo od 0 - 1 
-		return (new Random().nextFloat()*550 + 150);
+		return (new Random().nextFloat()*450 + 250);
 	}
 	
 	

@@ -15,7 +15,7 @@ public class GameCanvas extends Canvas {
 	private World world;
 	
 	public static final int UP_BOUND=85;
-	public static final int DOWN_BOUND=30;
+	public static final int DOWN_BOUND=70;
 	
 	public GameCanvas(World world) {
 		this.world=world;
@@ -25,11 +25,7 @@ public class GameCanvas extends Canvas {
 	public void paint(Graphics g) {
 		super.paint(g);
 		
-		
-
-		
-
-		
+			
 		g.setColor(Color.CYAN);
 		g.fillRect(0, 0, MainFrame.WIDTH, MainFrame.HEIGHT);
 		
@@ -50,7 +46,7 @@ public class GameCanvas extends Canvas {
 		g.fillRect(0, 0, MainFrame.WIDTH, UP_BOUND);
 		
 		g.setColor(Color.BLACK);
-		g.fillRect(0, MainFrame.HEIGHT- DOWN_BOUND, MainFrame.WIDTH, DOWN_BOUND );
+		g.fillRect(0, MainFrame.HEIGHT - DOWN_BOUND, MainFrame.WIDTH, DOWN_BOUND );
 		
 			
 	}
