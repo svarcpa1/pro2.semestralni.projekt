@@ -14,8 +14,8 @@ import cz.uhk.fim.pro2.game.model.World;
 public class GameCanvas extends Canvas {
 	private World world;
 	
-	public static final int UP_BOUND=85;
-	public static final int DOWN_BOUND=70;
+	public static final int UP_BOUND=50;
+	public static final int DOWN_BOUND=85;
 	
 	public GameCanvas(World world) {
 		this.world=world;
@@ -26,7 +26,7 @@ public class GameCanvas extends Canvas {
 		super.paint(g);
 		
 			
-		g.setColor(Color.CYAN);
+		g.setColor(Color.cyan);
 		g.fillRect(0, 0, MainFrame.WIDTH, MainFrame.HEIGHT);
 		
 		Bird bird = world.getBird();

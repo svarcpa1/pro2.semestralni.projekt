@@ -38,7 +38,7 @@ public class HomeScreen extends Screen {
 		jLabelTitle.setForeground(Color.black);
 		
 		//nastavím velikost a pozici
-		jLabelTitle.setBounds(40, 80, 400, 50);
+		jLabelTitle.setBounds(150, 150, 400, 50);
 		jButtonPlay.setBounds(100, 400, 280, 50);
 		jButtonMute.setBounds(100, 460, 280, 50);
 		jButtonScore.setBounds(100, 520, 280, 50);

@@ -53,9 +53,9 @@ public class GameScreen extends Screen  implements WorldListener{
 			}
 		});
 		
-		jButtonBack.setBounds(20, 20, 60, 60);
+		jButtonBack.setBounds(320, 10, 60, 30);
 		jButtonBack.setFont(new Font("Arial",Font.PLAIN, 8));
-		jButtonPause.setBounds(400, 20, 60, 60);
+		jButtonPause.setBounds(400, 10, 60, 30);
 		jButtonPause.setFont(new Font("Arial",Font.PLAIN, 8));
 		
 		add(jButtonPause);
@@ -64,8 +64,14 @@ public class GameScreen extends Screen  implements WorldListener{
 		jLabelScore = new JLabel("Score: " + Bird.DEFAULT_SCORE);
 		jLabelLifes = new JLabel("Životy: " + Bird.DEFAULT_LIFES);
 		
-		jLabelLifes.setBounds(260, 20, 120, 60);
-		jLabelScore.setBounds(100, 20, 120, 60);
+		jLabelScore.setBackground(Color.orange);
+		jLabelScore.setOpaque(true);
+		jLabelLifes.setOpaque(true);		
+		jLabelLifes.setBackground(Color.orange);
+
+		jLabelScore.setBounds(20, 10, 80, 30);
+		jLabelLifes.setBounds(100, 10, 80, 30);		
+		
 		
 		add(jLabelLifes);
 		add(jLabelScore);
