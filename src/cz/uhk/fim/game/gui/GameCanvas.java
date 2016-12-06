@@ -45,6 +45,9 @@ public class GameCanvas extends Canvas {
 		g.setColor(Color.orange);
 		g.fillRect(0, 0, MainFrame.WIDTH, UP_BOUND);
 		
+		g.setColor(Color.black);
+		g.fillRect(0, UP_BOUND, MainFrame.WIDTH, 1);
+		
 		g.setColor(Color.BLACK);
 		g.fillRect(0, MainFrame.HEIGHT - DOWN_BOUND, MainFrame.WIDTH, DOWN_BOUND );
 		

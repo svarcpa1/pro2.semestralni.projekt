@@ -12,8 +12,8 @@ public class Bird {
 
 	public static final int DEFAULT_SCORE =0;
 	public static final int DEFAULT_LIFES =3;
-	private static final int GRAVITY = 400;
-	public static final int JUMP = 650;
+	private static final int GRAVITY = 550;
+	public static final int JUMP = 950;
 	
 	private String name;
 	private float positionX, positionY;

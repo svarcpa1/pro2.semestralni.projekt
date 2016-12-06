@@ -13,7 +13,7 @@ public class Tube {
 	private float height;
 	private Color color;
 	private boolean counted = false;
-	private  static final int WIDTH =50; 
+	private  static final int WIDTH =70; 
 	
 	private static final int GAP = 200;
 	
