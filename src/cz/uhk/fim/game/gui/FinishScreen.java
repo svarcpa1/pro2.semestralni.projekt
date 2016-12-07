@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
+import cz.uhk.fim.pro2.game.ScoreManager;
 import cz.uhk.fim.pro2.game.model.World;
 
 public class FinishScreen extends Screen{
@@ -20,6 +21,8 @@ public class FinishScreen extends Screen{
 		super(mainFrame);
 		
 		int score = world.getBird().getScore();
+		
+		ScoreManager.putScore(score);
 		
 		jLabelScore = new JLabel(score+"!");
 		jButtonHome= new JButton("Home");
