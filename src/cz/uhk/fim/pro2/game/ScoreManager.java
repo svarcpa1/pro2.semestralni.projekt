@@ -37,6 +37,14 @@ public class ScoreManager {
 		return getInstance().getAll();
 	}
 	
+	public static int getItemsNumber(){
+		return ScoreManager.getList().size();
+	}
 	
+	public static int getItemIndex(int index){
+		return ScoreManager.getList().get(index);
+	}
 	
-}
+
+}	
+
