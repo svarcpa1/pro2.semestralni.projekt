@@ -15,7 +15,7 @@ public class GameCanvas extends Canvas {
 	private World world;
 	
 	public static final int UP_BOUND=50;
-	public static final int DOWN_BOUND=85;
+	public static final int DOWN_BOUND=60;
 	
 	public GameCanvas(World world) {
 		this.world=world;

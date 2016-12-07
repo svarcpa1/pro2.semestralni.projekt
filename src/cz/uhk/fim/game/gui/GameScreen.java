@@ -124,6 +124,8 @@ public class GameScreen extends Screen  implements WorldListener{
 				
 				if(!bird.isAlive()){
 					timer.stop();
+					FinishScreen finishScreen= new FinishScreen(mainFrame, world) ;
+					mainFrame.setScreen(finishScreen);
 				}
 				
 				
