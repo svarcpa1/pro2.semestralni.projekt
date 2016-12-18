@@ -64,13 +64,15 @@ public class GameScreen extends Screen  implements WorldListener{
 		jLabelScore = new JLabel("Score: " + Bird.DEFAULT_SCORE);
 		jLabelLifes = new JLabel("Životy: " + Bird.DEFAULT_LIFES);
 		
-		jLabelScore.setBackground(Color.orange);
+		
 		jLabelScore.setOpaque(true);
+		jLabelScore.setBackground(Color.LIGHT_GRAY);
 		jLabelLifes.setOpaque(true);		
-		jLabelLifes.setBackground(Color.orange);
+		jLabelLifes.setBackground(Color.pink);
 
 		jLabelScore.setBounds(20, 10, 80, 30);
-		jLabelLifes.setBounds(100, 10, 80, 30);		
+		jLabelLifes.setBounds(100, 10, 80, 30);	
+
 		
 		
 		add(jLabelLifes);
@@ -119,8 +121,8 @@ public class GameScreen extends Screen  implements WorldListener{
 				float delta = (currentTimeMillis - lastTimeMillis) / 1000f;				
 				world.update(delta);
 				
-				jLabelLifes.setText("Životy: " +bird.getLifes());
-				jLabelScore.setText("Score: "+ bird.getScore());
+				jLabelLifes.setText("  Životy: " +bird.getLifes());
+				jLabelScore.setText("  Score: "+ bird.getScore());
 				
 				if(!bird.isAlive()){
 					timer.stop();

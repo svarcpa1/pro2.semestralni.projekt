@@ -43,7 +43,7 @@ public class GameCanvas extends Canvas {
 		
 			
 		g.setColor(Color.cyan);
-		g.drawImage(imageBackground, 0, 0, MainFrame.WIDTH, MainFrame.HEIGHT, null);
+		g.drawImage(imageBackground, 0, 50, MainFrame.WIDTH, 740, null);
 		
 		Bird bird = world.getBird();
 		bird.paint(g,imageBird);
