@@ -73,21 +73,14 @@ public class GameScreen extends Screen  implements WorldListener{
 		jLabelScore.setBounds(20, 10, 80, 30);
 		jLabelLifes.setBounds(100, 10, 80, 30);	
 
-		
-		
 		add(jLabelLifes);
 		add(jLabelScore);
 
-		
 		//WORLD	
 		bird = new Bird("Pavel", 150, 400);
 		
-		
-
-		
 		World world = new World(bird, this);
 		world.generateRandom();
-
 		
 		/*
 		world.addTubet(new Tube(400, 400, Color.green));
@@ -110,7 +103,6 @@ public class GameScreen extends Screen  implements WorldListener{
 		});
 		
 		add(gamecanvas);
-
 
 		timer = new Timer(20, new ActionListener() {
 			
