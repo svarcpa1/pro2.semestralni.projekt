@@ -1,10 +1,20 @@
 package cz.uhk.fim.game.gui;
 
+import sun.audio.*;
+
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,6 +23,7 @@ public class HomeScreen extends Screen {
 	
 	public HomeScreen (MainFrame mainFrame) {
 		super(mainFrame);
+
 		
 		JButton jButtonPlay = new JButton("PLAY");	
 		JButton jButtonScore = new JButton("SCORE");	
@@ -30,7 +41,10 @@ public class HomeScreen extends Screen {
 		jButtonScore.addActionListener(new ActionListener() {			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
 				mainFrame.setScreen(new ScoreScreen(mainFrame));
+
+
 			}
 		});
 		
@@ -43,13 +57,22 @@ public class HomeScreen extends Screen {
 		jButtonMute.setBounds(100, 460, 280, 50);
 		jButtonScore.setBounds(100, 520, 280, 50);
 		
+
+		
 		add(jLabelTitle);
 		add(jButtonPlay);
 		add(jButtonScore);
 		add(jButtonMute);
-	
+		
+
 		
 	}
+	
+
+	
+	
+
+	
 	
 
 	
