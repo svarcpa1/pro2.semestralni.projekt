@@ -10,13 +10,14 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.imageio.ImageIO;
+import javax.swing.JPanel;
 
 import cz.uhk.fim.pro2.game.model.Bird;
 import cz.uhk.fim.pro2.game.model.Heart;
 import cz.uhk.fim.pro2.game.model.Tube;
 import cz.uhk.fim.pro2.game.model.World;
 
-public class GameCanvas extends Canvas {
+public class GameCanvas extends JPanel {
 	private World world;
 	private BufferedImage imageBird, imageHeart, imageBackground, imageBottom, imageTube, imageTop;
 	public static final int UP_BOUND=50;
@@ -38,8 +39,8 @@ public class GameCanvas extends Canvas {
 	}
 	
 	@Override
-	public void paint(Graphics g) {
-		super.paint(g);
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
 		
 			
 		g.setColor(Color.cyan);

@@ -124,7 +124,7 @@ public class GameScreen extends Screen  implements WorldListener{
 				
 				
 				
-				gamecanvas.repaint();
+				repaint();
 				
 				lastTimeMillis = currentTimeMillis;
 			}
