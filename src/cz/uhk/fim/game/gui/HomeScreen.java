@@ -15,22 +15,26 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import javax.imageio.ImageIO;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 
 import cz.uhk.fim.pro2.game.model.Music;
 
 public class HomeScreen extends Screen {
 	
-
+	ButtonGroup group1 = new ButtonGroup();
+	JRadioButton jRadioButtonZvukyON = new JRadioButton("Sounds ON");
+	JRadioButton jRadioButtonZvukyOFF = new JRadioButton("Sounds OFF");
+	
 	public HomeScreen (MainFrame mainFrame) {
 		super(mainFrame);
 		
 		
 		JButton jButtonPlay = new JButton("PLAY");	
 		JButton jButtonScore = new JButton("SCORE");	
-		JButton jButtonMute = new JButton("MUTE");
 		JLabel jLabelTitle = new JLabel("FIM BIRD");
 		
 		jButtonPlay.addActionListener(new ActionListener() {			
@@ -38,7 +42,10 @@ public class HomeScreen extends Screen {
 			public void actionPerformed(ActionEvent e) {
 				//co se stane kdyz na tohle tlacitko kliknu
 				mainFrame.setScreen(new GameScreen(mainFrame));
-				Music music = new Music("assets/click.wav");
+				if(jRadioButtonZvukyON.isSelected()){
+					Music music = new Music("assets/click.wav");
+				}
+				
 			}
 		});
 		
@@ -46,7 +53,9 @@ public class HomeScreen extends Screen {
 			@Override
 			public void actionPerformed(ActionEvent e) {				
 				mainFrame.setScreen(new ScoreScreen(mainFrame));
-				Music music = new Music("assets/click.wav");
+				if(jRadioButtonZvukyON.isSelected()){
+					Music music = new Music("assets/click.wav");
+				}
 
 			}
 		});
@@ -57,13 +66,22 @@ public class HomeScreen extends Screen {
 		//nastavím velikost a pozici
 		jLabelTitle.setBounds(150, 150, 400, 50);
 		jButtonPlay.setBounds(100, 400, 280, 50);
-		jButtonMute.setBounds(100, 460, 280, 50);
-		jButtonScore.setBounds(100, 520, 280, 50);
-
+		jButtonScore.setBounds(100, 460, 280, 50);
+		
+		jRadioButtonZvukyOFF.setBounds(100, 530, 300, 30);
+		jRadioButtonZvukyON.setBounds(100, 570, 300, 30);
+		
+	
+		
+		group1.add(jRadioButtonZvukyOFF);
+		group1.add(jRadioButtonZvukyON);
+		
+		add(jRadioButtonZvukyOFF);
+		add(jRadioButtonZvukyON);
 		add(jLabelTitle);
 		add(jButtonPlay);
 		add(jButtonScore);
-		add(jButtonMute);		
+		
 	
 		
 	}

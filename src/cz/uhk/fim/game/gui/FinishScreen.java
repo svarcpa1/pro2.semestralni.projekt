@@ -44,7 +44,9 @@ public class FinishScreen extends Screen{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				mainFrame.setScreen(new GameScreen(mainFrame));
+	
 				Music music = new Music("assets/click.wav");
+				
 			}
 		});
 		
