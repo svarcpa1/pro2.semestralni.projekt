@@ -19,6 +19,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import cz.uhk.fim.pro2.game.model.Music;
+
 public class HomeScreen extends Screen {
 	
 
@@ -36,15 +38,15 @@ public class HomeScreen extends Screen {
 			public void actionPerformed(ActionEvent e) {
 				//co se stane kdyz na tohle tlacitko kliknu
 				mainFrame.setScreen(new GameScreen(mainFrame));
+				Music music = new Music("assets/click.wav");
 			}
 		});
 		
 		jButtonScore.addActionListener(new ActionListener() {			
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				
+			public void actionPerformed(ActionEvent e) {				
 				mainFrame.setScreen(new ScoreScreen(mainFrame));
-
+				Music music = new Music("assets/click.wav");
 
 			}
 		});

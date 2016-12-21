@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 import cz.uhk.fim.pro2.game.ScoreManager;
+import cz.uhk.fim.pro2.game.model.Music;
 
 public class ScoreScreen extends Screen{
 	
@@ -31,6 +32,7 @@ public class ScoreScreen extends Screen{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				mainFrame.setScreen(new HomeScreen(mainFrame));
+				Music music = new Music("assets/dead_bird.wav");
 			}
 		});
 		

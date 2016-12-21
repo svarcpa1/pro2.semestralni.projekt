@@ -14,6 +14,7 @@ import javax.swing.Timer;
 import cz.uhk.fim.pro2.game.model.Bird;
 import cz.uhk.fim.pro2.game.model.Ground;
 import cz.uhk.fim.pro2.game.model.Heart;
+import cz.uhk.fim.pro2.game.model.Music;
 import cz.uhk.fim.pro2.game.model.Tube;
 import cz.uhk.fim.pro2.game.model.World;
 import interfaces.WorldListener;
@@ -37,6 +38,7 @@ public class GameScreen extends Screen  implements WorldListener{
 			public void actionPerformed(ActionEvent e) {
 				timer.stop();
 				mainFrame.setScreen(new HomeScreen(mainFrame));
+				Music music = new Music("assets/click.wav");
 			}
 		});
 		
@@ -50,6 +52,7 @@ public class GameScreen extends Screen  implements WorldListener{
 					lastTimeMillis = System.currentTimeMillis();
 					timer.start();
 				}
+				Music music = new Music("assets/click.wav");
 			}
 		});
 		
@@ -99,6 +102,7 @@ public class GameScreen extends Screen  implements WorldListener{
 			public void mousePressed(MouseEvent e) {
 				super.mousePressed(e);
 				bird.goUp();
+				Music music = new Music("assets/wings.wav");
 			}
 		});
 		
@@ -120,10 +124,8 @@ public class GameScreen extends Screen  implements WorldListener{
 					timer.stop();
 					FinishScreen finishScreen= new FinishScreen(mainFrame, world) ;
 					mainFrame.setScreen(finishScreen);
-				}
-				
-				
-				
+					Music music = new Music("assets/gmae_over.wav");
+				}	
 				repaint();
 				
 				lastTimeMillis = currentTimeMillis;
@@ -138,6 +140,7 @@ public class GameScreen extends Screen  implements WorldListener{
 	public void crashTube(Tube tube) {
 		bird.removeLive();
 		bird.setPositionY(tube.getCenterY());
+		Music music = new Music("assets/dead_bird.wav");
 		
 	}
 
@@ -145,6 +148,7 @@ public class GameScreen extends Screen  implements WorldListener{
 	public void catchHeart(Heart heart) {
 		heart.setPositionY(-100);
 		bird.catchHeart();
+		Music music = new Music("assets/picked_coin.wav");
 
 		
 	}
@@ -155,7 +159,7 @@ public class GameScreen extends Screen  implements WorldListener{
 		bird.setSpeed(Bird.JUMP/2);
 		
 		bird.removeLive();
-		
+		Music music = new Music("assets/dead_bird.wav");
 	}
 }
 

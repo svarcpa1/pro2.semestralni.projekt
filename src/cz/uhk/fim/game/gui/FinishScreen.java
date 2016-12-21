@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 import cz.uhk.fim.pro2.game.ScoreManager;
+import cz.uhk.fim.pro2.game.model.Music;
 import cz.uhk.fim.pro2.game.model.World;
 
 public class FinishScreen extends Screen{
@@ -43,14 +44,15 @@ public class FinishScreen extends Screen{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				mainFrame.setScreen(new GameScreen(mainFrame));
-				
+				Music music = new Music("assets/dead_bird.wav");
 			}
 		});
 		
 		jButtonHome.addActionListener(new ActionListener() {	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				mainFrame.setScreen(new HomeScreen(mainFrame));				
+				mainFrame.setScreen(new HomeScreen(mainFrame));	
+				Music music = new Music("assets/dead_bird.wav");
 			}
 		});
 		
